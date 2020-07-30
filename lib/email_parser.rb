@@ -22,7 +22,8 @@ class EmailAddressParser
       e_array = @emails.split(" ")
       e_array.uniq
     else
-      e_array = @emails.split(/, |\s /)
+      e_array = @emails.split(", ")
+      e_array.each{|element| element.include?(" ") ? element.split(" ") : element}
       e_array.uniq
     end
     
