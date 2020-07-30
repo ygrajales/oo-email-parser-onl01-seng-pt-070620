@@ -21,6 +21,8 @@ class EmailAddressParser
     elsif @emails.include?(" ")
       e_array = @emails.split(" ")
       e_array.uniq
+    else
+      e_array = @emails.split(/)
     end
     
   end
