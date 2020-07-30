@@ -12,20 +12,7 @@ class EmailAddressParser
   end
   
   def parse
-    
-    e_array = []
-    
-    if @emails.include?(", ")
-      e_array = @emails.split(", ")
-      e_array.uniq
-    elsif @emails.include?(" ")
-      e_array = @emails.split(" ")
-      e_array.uniq
-    else
-      e_array = @emails.split(/[,\s]+/)
-      e_array.uniq
-    end
-    
+    emails.delete(',').split.uniq
   end
 
 
