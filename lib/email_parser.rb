@@ -22,7 +22,7 @@ class EmailAddressParser
       e_array = @emails.split(" ")
       e_array.uniq
     else
-      e_array = @emails.split(/)
+      e_array = @emails.split(/\s|, /)
     end
     
   end
